@@ -88,7 +88,7 @@ header h1 {
 }
 
 .about {
-  padding: 160px;
+  padding: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,7 +139,7 @@ header h1 {
 }
 
 .projects {
-  padding: 160px;
+  padding: 200px;
   padding-top: 0;
 }
 
@@ -208,7 +208,7 @@ footer .contact-box a::after {
 
 .projects .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 400px));
   grid-template-rows: 675px;
   grid-auto-rows: 675px;
   gap: 30px;
@@ -234,7 +234,7 @@ footer .contact-box a::after {
 }
 
 .work {
-  padding: 160px;
+  padding: 200px;
   padding-top: 0;
   display: flex;
   gap: 125px;
@@ -276,7 +276,7 @@ footer .contact-box a::after {
 }
 
 .work .intro a {
-  margin-top: 30px;
+  margin-top: 50px;
   display: inline-block;
 }
 
@@ -337,4 +337,169 @@ footer .contact-box p {
 footer .contact-box a {
   display: inline-block;
   margin-top: 30px;
+}
+
+.contact-me {
+  position: fixed;
+  right: -62px;
+  top: 50%;
+  transform: rotate(90deg);
+  padding: 13px 38px;
+  background-color: var(--black);
+  border: 2px solid var(--white);
+}
+
+@media only screen and (max-width: 1700px) {
+  .about {
+    padding: 200px 100px;
+  }
+
+  .projects {
+    padding: 200px 100px;
+    padding-top: 0;
+  }
+
+  .work {
+    padding: 200px 100px;
+    padding-top: 0;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  header h1 {
+    left: 50px;
+    bottom: 100px;
+  }
+
+  .about {
+    flex-direction: column;
+    padding-bottom: 100px;
+  }
+
+  .about .img-container {
+    align-self: stretch;
+  }
+
+  .about .text {
+    transform: translateY(-96px) translateX(-20px);
+  }
+
+  nav {
+    right: 65px;
+  }
+
+  .work {
+    padding: 200px 70px;
+    padding-top: 200px;
+    padding-top: 0;
+    gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  header h1 {
+    left: 30px;
+    bottom: 70px;
+    font-size: 52px;
+    padding: 20px;
+  }
+
+  .about {
+    padding: 100px 50px;
+    padding-bottom: 0;
+    padding-top: 100px;
+  }
+
+  .about .img-container {
+    height: 400px;
+    flex-basis: 431px;
+  }
+
+  .about .text {
+    padding: 36px 0 0 36px;
+  }
+
+  nav {
+    right: 25px;
+  }
+
+  .work {
+    padding: 100px 50px;
+    gap: 100px;
+    flex-direction: column;
+  }
+
+  .projects {
+    padding: 100px 50px;
+  }
+
+  .projects .title {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .projects .title h3 {
+    text-align: center;
+  }
+
+  footer .contact-box {
+    padding: 50px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  header h1 {
+    left: 20px;
+    bottom: 50px;
+    font-size: 42px;
+    padding: 17px;
+  }
+
+  .contact-me {
+    right: -75px;
+  }
+
+  .about {
+    padding: 100px 30px;
+    padding-bottom: 0;
+    padding-top: 100px;
+  }
+
+  .about .text h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    line-height: 28px;
+  }
+
+  .projects {
+    padding: 100px 30px;
+  }
+
+  .projects .title h3 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .projects .title {
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .projects .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-template-rows: 500px;
+    grid-auto-rows: 500px;
+  }
+
+  .work {
+    padding: 100px 30px;
+  }
+
+  footer {
+    padding: 100px 30px;
+  }
+
+  footer .contact-box {
+    padding: 25px;
+  }
 }
