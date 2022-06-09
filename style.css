@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+/* -------------------initialize css */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --dark-gray: hsl(0, 0%, 55%);
+  --very-dark-gray: hsl(0, 0%, 41%);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Alata', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+a,
+a:link,
+a:visited {
+  color: var(--white);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 64px;
+  right: 165px;
+  z-index: 2;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: var(--white);
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header {
+  height: 650px;
+  position: relative;
+  background-color: var(--black);
+}
+
+header h1 {
+  display: inline-block;
+  font-family: 'Josefin Sans';
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 70px;
+  letter-spacing: 0px;
+  text-align: left;
+  padding: 40px;
+  border: 2px solid var(--white);
+  position: absolute;
+  left: 165px;
+  bottom: 146px;
+  color: var(--white);
+}
+
+.about {
+  padding: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .img-container {
+  height: 600px;
+  flex-basis: 731px;
+  filter: grayscale(100%);
+  background-image: url(./assets/images/me.png);
+  background-position: center top;
+  background-size: cover;
+  transition: all 0.3s;
+}
+
+.about .img-container:hover {
+  filter: initial;
+}
+
+.about .text {
+  color: var(--black);
+  padding: 96px 0 0 96px;
+  background-color: var(--white);
+  max-width: 550px;
+  transform: translateX(-96px);
+  align-self: flex-end;
+}
+
+.about .text h3 {
+  font-family: 'Josefin Sans';
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 48px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.about .text p {
+  font-family: 'Alata';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: left;
+  opacity: 0.5;
+}
+
+.projects {
+  padding: 160px;
+  padding-top: 0;
+}
+
+.projects .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.projects .title h3 {
+  font-family: 'Josefin Sans';
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 48px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.projects .title a,
+.work .intro a,
+footer .contact-box a {
+  font-family: 'Alata';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 5px;
+  color: var(--black);
+  padding: 13px 38px;
+  border: 1px solid black;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s;
+}
+
+.projects .title a:hover,
+.work .intro a:hover,
+footer .contact-box a:hover {
+  border: 1px solid white;
+  color: var(--white);
+}
+
+.projects .title a:hover::after,
+.work .intro a:hover::after,
+footer .contact-box a:hover:after {
+  transform: translateY(0px);
+  visibility: visible;
+}
+
+.projects .title a::after,
+.work .intro a::after,
+footer .contact-box a::after {
+  content: '';
+  display: inline-block;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateY(-100%);
+  visibility: hidden;
+  /* mix-blend-mode: lighten; */
+}
+
+.projects .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-rows: 675px;
+  grid-auto-rows: 675px;
+  gap: 30px;
+  justify-content: center;
+}
+
+.projects .gallery .item {
+  background-color: var(--black);
+  position: relative;
+}
+
+.projects .gallery .item h4 {
+  color: var(--white);
+  font-family: 'Josefin Sans';
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
+  position: absolute;
+  bottom: 32px;
+  left: 40px;
+}
+
+.work {
+  padding: 160px;
+  padding-top: 0;
+  display: flex;
+  gap: 125px;
+}
+
+.work .intro {
+  border-top: 1px solid var(--black);
+  padding-top: 50px;
+}
+
+.work p {
+  font-family: 'Alata';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: left;
+  opacity: 0.5;
+}
+
+.work .intro h3 {
+  font-family: 'Josefin Sans';
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 48px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.work .intro p:nth-child(2) {
+  margin-bottom: 16px;
+}
+
+.work .intro p:not(:nth-child(2)) {
+  margin-top: 16px;
+  opacity: 1;
+}
+
+.work .intro a {
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.work .text h4 {
+  font-family: 'Josefin Sans';
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 36px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 80px;
+  background-color: var(--black);
+}
+
+footer h3 {
+  font-family: 'Josefin Sans';
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 36px;
+  letter-spacing: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+footer .contact-box {
+  background-color: var(--white);
+  max-width: 700px;
+  margin: 0 auto;
+  border: 2px solid var(--black);
+  padding: 100px;
+  color: var(--black);
+}
+
+/* footer .contact-box:hover{
+  background-color: var(--black);
+  border: 2px solid var(--white);
+  color: var(--white);
+} */
+
+footer .contact-box p {
+  font-family: 'Alata';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: center;
+  opacity: 1;
+}
+
+footer .contact-box a {
+  display: inline-block;
+  margin-top: 30px;
+}
