@@ -63,11 +63,14 @@ let about = gsap
       trigger: '.about',
       start: 'top 50%',
       //   start:"top 50%"
-      markers: true,
     },
   })
-  .from('.about .img-container', { y: -50, opacity: 0 })
-  .from('.about .text', { x: 50, opacity: 0 }, '<');
+  .from('.about .text', { x: 50, opacity: 0 })
+  .from(
+    '.about .img-container',
+    { scale: 0.8, opacity: 0, ease: 'linear' },
+    '<.2'
+  );
 
 let projects = gsap
   .timeline({
@@ -117,3 +120,35 @@ let contact = gsap
   })
   .from('footer h3', { x: -20, opacity: 0 })
   .from('footer .contact-box', { scale: 0.8, opacity: 0 }, '<');
+
+const items = document.querySelectorAll('.item');
+
+// items[1].addEventListener('click', () => {
+//   gsap.to('.text-back', { y: '0' });
+// });
+// gsap.from('.text-back', { y: '100%' });
+
+items.forEach((item) => {
+  let tl = gsap
+    .timeline({ paused: true, default: { ease: 'linear' } })
+    .to(item.querySelector('.text-back'), { y: '0' })
+    .from(
+      item.querySelectorAll('.text-back > *'),
+      {
+        x: -50,
+        opacity: 0,
+        stagger: 0.1,
+      },
+      '<.4'
+    );
+  item.addEventListener('click', () => {
+    if (item.classList.contains('clicked')) {
+      item.classList.remove('clicked');
+      tl.timeScale(1.5);
+      tl.reverse();
+    } else {
+      item.classList.add('clicked');
+      tl.play();
+    }
+  });
+});
