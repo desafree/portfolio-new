@@ -66,9 +66,10 @@ nav ul li a:hover {
 }
 
 header {
-  height: 650px;
+  height: 750px;
   position: relative;
   background-color: var(--black);
+  overflow: hidden;
 }
 
 header h1 {
@@ -92,6 +93,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .about .img-container {
@@ -141,6 +143,7 @@ header h1 {
 .projects {
   padding: 200px;
   padding-top: 0;
+  overflow: hidden;
 }
 
 .projects .title {
@@ -240,7 +243,7 @@ footer .contact-box a::after {
   gap: 125px;
 }
 
-.work .intro {
+.work .intro h3 {
   border-top: 1px solid var(--black);
   padding-top: 50px;
 }
@@ -349,6 +352,21 @@ footer .contact-box a {
   border: 2px solid var(--white);
 }
 
+.content {
+  position: absolute;
+  right: 165px;
+  bottom: 0px;
+}
+
+.tagcloud {
+  font-size: 20px;
+  font-weight: 650;
+  color: var(--white);
+}
+.tagcloud--item:hover {
+  color: orange;
+}
+
 @media only screen and (max-width: 1700px) {
   .about {
     padding: 200px 100px;
@@ -362,6 +380,12 @@ footer .contact-box a {
   .work {
     padding: 200px 100px;
     padding-top: 0;
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .content {
+    display: none;
   }
 }
 
