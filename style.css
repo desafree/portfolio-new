@@ -445,6 +445,10 @@ footer .contact-box a {
   color: orange;
 }
 
+nav .mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 1700px) {
   .about {
     padding: 200px 100px;
@@ -546,6 +550,77 @@ footer .contact-box a {
 
   footer .contact-box {
     padding: 50px;
+  }
+
+  nav .desktop {
+    display: none;
+  }
+
+  nav .mobile {
+    display: initial;
+    position: relative;
+  }
+
+  .mobile .burger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    cursor: pointer;
+  }
+
+  nav .mobile .nav-container {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  nav .mobile .nav-container .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--black);
+    border: none;
+    cursor: pointer;
+    box-sizing: content-box;
+    padding: 10px;
+  }
+
+  nav .mobile .nav-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-left: 24px;
+    font-family: 'Josefin Sans';
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 38px;
+    letter-spacing: 0px;
+    text-align: left;
+    text-align: left;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  nav .mobile .nav-container ul li a:hover {
+    text-decoration: none;
+  }
+
+  nav .mobile .nav-container ul li {
+    border-bottom: 2px solid white;
   }
 }
 

@@ -53,8 +53,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 let header = gsap
   .timeline()
-  .from('ul li', { y: -50, opacity: 0, stagger: 0.1 })
-  .from('header h1', { x: -100, opacity: 0 })
+  .from('ul li', { y: -50, opacity: 0, stagger: 0.05 })
+  .from('.burger', { y: -50, opacity: 0 }, '<')
+  .from('header h1', { x: -100, opacity: 0 }, '-=.5')
   .from('.contact-me', { xPercent: 50, opacity: 0 }, '<');
 
 let about = gsap
@@ -151,4 +152,34 @@ items.forEach((item) => {
       tl.play();
     }
   });
+});
+
+const tlNavMobile = gsap
+  .timeline({ paused: true })
+  .to('.burger', { opacity: 0, scale: 0.5 })
+  .to('nav .mobile .nav-container', { visibility: 'visible' }, '<.2')
+  .from('nav .mobile .nav-container', { x: '100%' }, '<');
+
+const menuIcon = document.querySelector('.burger');
+menuIcon.addEventListener('click', () => {
+  const body = document.querySelector('body');
+  body.style.overflow = 'hidden';
+  tlNavMobile.play();
+  const navItems = document.querySelectorAll('.mobile li');
+  navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const body = document.querySelector('body');
+      body.style.overflow = 'initial';
+      tlNavMobile.timeScale(1.5);
+      tlNavMobile.reverse();
+    });
+  });
+});
+
+const closeButton = document.querySelector('.close');
+closeButton.addEventListener('click', () => {
+  tlNavMobile.timeScale(1.5);
+  tlNavMobile.reverse();
+  const body = document.querySelector('body');
+  body.style.overflow = 'initial';
 });
