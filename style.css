@@ -706,3 +706,9 @@ nav .mobile {
     padding: 25px;
   }
 }
+
+@media (hover: none) {
+  .cursor {
+    display: none;
+  }
+}
