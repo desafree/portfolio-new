@@ -36,6 +36,31 @@ a:visited {
   text-decoration: none;
 }
 
+.cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.grow,
+.grow-small {
+  transform: scale(10);
+  background: #fff;
+  mix-blend-mode: difference;
+  border: none;
+}
+.grow-small {
+  transform: scale(2.5);
+}
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -86,6 +111,7 @@ header h1 {
   left: 165px;
   bottom: 146px;
   color: var(--white);
+  background-color: black;
 }
 
 .about {
@@ -309,9 +335,9 @@ footer .contact-box a::after {
   text-decoration: underline;
 }
 
-.text-back .links a:hover {
+/* .text-back .links a:hover {
   color: orange;
-}
+} */
 
 .work {
   padding: 200px;
